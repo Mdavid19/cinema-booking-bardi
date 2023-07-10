@@ -1,0 +1,25 @@
+<%- include('./layout/header') %>
+
+<body>
+    <div>
+        <h1>Registration</h1>
+    </div>
+    <div class="main-content">
+        <form action="/api/register" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input type="text" required class="form-control" id="username" name="username" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" required class="form-control" id="password" name="password">
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+            <% if (invalidRegistration) { %>
+                <p style="color: brown;">User already registered</p>
+                <% } %>
+          </form>
+    </div>
+    
+</body>
+</html>

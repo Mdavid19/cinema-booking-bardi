@@ -1,0 +1,69 @@
+<%- include('./layout/header') %>
+
+<body>
+    <div class="main-container">
+        <div class="header-container">
+            <h1>Main Page</h1>
+            <a href="/logout"><button class="btn btn-dark" onclick="">Logout</button></a>
+    
+        </div>
+        <div class="canvas"><p>CANVAS</p></div>
+        <div class="main-content">
+            <div class="grid-container">
+                <% chairs.forEach(chair => { %>  
+                    <% if (chair.status ==="RESERVED") { %>
+                        <div id="chair<%= chair.chairId %>" style="background-color: #ffbf00;">
+                            <div>
+                                <p><%= chair.status %></p>
+                            </div>
+                            <div>
+                                <p>Seat No.<%= chair.chairId %></p>
+                            </div>
+                        </div>
+                    <%} else if (chair.status==="PAID") {%>
+                    <div id="chair<%= chair.chairId %>" style="background-color: #c04000;">
+                        <div>
+                            <p><%= chair.status %></p>
+                        </div>
+                        <div>
+                            <p>Seat No.<%= chair.chairId %></p>
+                        </div>
+                    </div>
+                    
+                    
+                    <%} else if (chair.status==="FREE") { %>
+                    
+                    <div id="chair<%= chair.chairId %>" style="background-color: #32cd32;">
+                        <div>
+                            <p><%= chair.status %></p>
+                        </div>
+                        <div>
+                            <p>Seat No.<%= chair.chairId %></p>
+                        </div>
+                    </div>
+                    <% } %>
+    
+                <%}) %>
+                
+            </div>
+            
+            <div>
+                <form action="/api/booking" method="post">
+                    <div class="select-container">
+                    <label for="chairId">Book seat here:</label>
+                    <select name="chairId" id="chairId" class="form-select">
+                        <option selected>Choose a seat</option>
+                        <% chairs.forEach(chair => { %>
+                         <option value="<%= chair.chairId  %>"><%= chair.chairId %></option>
+                        <% }) %>
+                    </select>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary mt-1">Reserve</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,17 @@
+<%- include('./layout/header') %>
+<body>
+    <div class="main-container">
+        <div>
+
+            <h1>For payment we only accept email address</h1>
+        </div>
+        <div>
+
+            <form action="/api/pay/<%= chairId %>" method="post">
+                <label for="email"> Give your valid email address:</label>
+                <input type="email" name="email" id="email" required>
+                <button type="submit" class="btn btn-primary">Purchase</button>
+            </form>
+        </div>
+    </div>
+</body>

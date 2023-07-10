@@ -1,0 +1,116 @@
+body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.grid-container {
+    background-color: rgba(83, 83, 205, 0.608);
+    display: grid;
+    grid-template-columns: auto;
+    width: 600px;
+    height: 400px;
+    grid-template-areas:
+    "chair1 chair2 chair3"
+    "chair4 chair5 chair6" ;
+    z-index: 100;
+}
+
+.canvas {
+    border-top: 10px black solid;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    width: 600px;
+    height: 100px;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+}
+
+.main-content{
+    width: 600px;
+
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 600px;
+
+}
+
+#chair1{
+    grid-area: chair1;
+    border-top: 1px black solid;
+    border-left: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#chair2{
+    grid-area: chair2;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#chair3{
+    grid-area: chair3;
+    border-top: 1px black solid;
+    border-right:1px black solid; ;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+#chair4{
+    grid-area: chair4;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#chair5{
+    grid-area: chair5;
+    border-bottom: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#chair6{
+    grid-area: chair6;
+    border: 1px black solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.select-container{
+    max-width: 300px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
